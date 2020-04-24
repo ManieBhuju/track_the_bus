@@ -30,7 +30,7 @@ dependencies:
 
   rxdart: ^0.24.0
 
-  geoflutterfire: ^2.1.0
+  # geoflutterfire: ^2.1.0
   location: ^3.0.2
   google_maps_flutter: ^0.5.26+2
 
