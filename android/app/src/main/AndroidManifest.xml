@@ -16,7 +16,7 @@
         android:label="track_the_bus"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API.KEY"
-            android:value="AIzaSyBSOHPLRS7eBfU-xXlCG-GUKJYKLO5-O98"/>
+            android:value="AIzaSyBRvg6GtNjDJzhJ0bvk1hA_GHMTV4Jzfbc"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
