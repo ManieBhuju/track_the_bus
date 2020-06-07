@@ -1,21 +1,16 @@
-
 import 'package:flutter/material.dart';
-//import 'package:track_the_bus/screens/home/mapload.dart';
-import 'package:track_the_bus/services/auth.dart';
-import 'dart:async';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:async';
+import 'package:flutter/services.dart';
+import 'package:location/location.dart';
 
-
-class Home extends StatefulWidget {
+class MapLoad extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _MapLoadState createState() => _MapLoadState();
 }
 
-class _HomeState extends State<Home> {
-    
-  
-  // final AuthService _auth = AuthService();
+class _MapLoadState extends State<MapLoad> {
 
   bool mapToggle = false;
   var currentLocation;
@@ -51,9 +46,9 @@ class _HomeState extends State<Home> {
                 mapType: MapType.hybrid,
                 initialCameraPosition: _kGooglePlex,
                 onMapCreated: (GoogleMapController controller) {
-                _controller.complete(controller);
+               _controller.complete(controller);
                 },
-              )
+                )
               :
               Center(
                 child: Text('Loading.. Please wait..',
@@ -65,11 +60,10 @@ class _HomeState extends State<Home> {
       ],
     );
   }
-  
+
   void onMapCreated(controller) {
     setState(() {
       mapController = controller;
     });
   }
-
 }

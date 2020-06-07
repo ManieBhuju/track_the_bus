@@ -7,9 +7,9 @@
          FlutterApplication and put your custom class here. -->
 
     <!-- this is for asking permission for the location access from the user      -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOACTION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOACTION"/>
 
     <application
         android:name="io.flutter.app.FlutterApplication"
