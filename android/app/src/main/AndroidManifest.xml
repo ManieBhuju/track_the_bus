@@ -6,8 +6,6 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
 
-    <!-- this is for asking permission for the location access from the user      -->
-    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOACTION"/>
 
@@ -16,7 +14,7 @@
         android:label="track_the_bus"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API.KEY"
-            android:value="AIzaSyBRvg6GtNjDJzhJ0bvk1hA_GHMTV4Jzfbc"/>
+            android:value="AIzaSyAbcwX8jsr6dzMwWgw3AZzI-3WTSER-ZAA"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
