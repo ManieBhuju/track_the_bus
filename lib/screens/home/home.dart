@@ -12,15 +12,15 @@ class _HomeState extends State<Home> {
 
   //for bottomnavbar
   int _currentIndex = 0;
-  final List<Widget> _children =[
-    
-    PlaceHolderWidget(Colors.black),
-  ],
+  final List<Widget> _children = [
+    Text("Hello there!"),
+    Profile(),
+  ];
 
-  void _onItemTapped(int index){
+  void onTabTapped(int index) {
     setState(() {
-          _currentIndex = index;
-        });
+      _currentIndex = index;
+    });
   }
   //end of the bottomnavibar//
 
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: _onItemTapped,
+        onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
