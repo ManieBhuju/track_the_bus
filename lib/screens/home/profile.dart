@@ -19,11 +19,19 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  var _name = "Any Name";
+  var _email = "newuser@gmail.com";
+  var _phone = "Phone no here";
+  var _address = "Your address here!";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        // title: Text("Profile"),
+        title: Text(
+          "Profile",
+        ),
         backgroundColor: Colors.grey[600],
       ),
       body: Column(
@@ -46,7 +54,7 @@ class _ProfileState extends State<Profile> {
                       height: 10.0,
                     ),
                     Text(
-                      "Natasha",
+                      _name,
                       style: TextStyle(
                         fontSize: 22.0,
                         color: Colors.blue[900],
@@ -55,13 +63,69 @@ class _ProfileState extends State<Profile> {
                     SizedBox(
                       height: 10.0,
                     ),
-                    Card(
-                      
-                    ),
                   ],
                 ),
               ),
             ),
+          ),
+          Column(
+            children: [
+              Card(
+                color: Colors.green[600],
+                shape: StadiumBorder(
+                  side: BorderSide( 
+                    color: Colors.red[600],
+                    width: 2.0,
+                  ),
+                ),
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+                elevation: 10.0,
+                child: Container(
+                  width: 500,
+                  height: 100,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+                      ),
+                      Text(
+                        "Email: ",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          color: Colors.red[800],
+                        ),
+                      ),
+                      Text(
+                        _email,
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          color: Colors.red[800],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 0.0),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.edit),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                child: Container(
+                  width: 300,
+                  height: 100,
+                  child: Text(
+                    "Phone no:",
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      color: Colors.red[800],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
