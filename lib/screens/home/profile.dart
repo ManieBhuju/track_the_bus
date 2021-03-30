@@ -70,65 +70,62 @@ class _ProfileState extends State<Profile> {
           ),
           Column(
             children: [
-              Card(
-                color: Colors.green[600],
-                shape: StadiumBorder(
-                  side: BorderSide( 
-                    color: Colors.red[600],
-                    width: 2.0,
-                  ),
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-                elevation: 10.0,
-                child: Container(
-                  width: 500,
-                  height: 100,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-                      ),
-                      Text(
-                        "Email: ",
-                        style: TextStyle(
-                          fontSize: 22.0,
-                          color: Colors.red[800],
-                        ),
-                      ),
-                      Text(
-                        _email,
-                        style: TextStyle(
-                          fontSize: 22.0,
-                          color: Colors.red[800],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 0.0),
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.edit),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                child: Container(
-                  width: 300,
-                  height: 100,
-                  child: Text(
-                    "Phone no:",
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      color: Colors.red[800],
-                    ),
-                  ),
-                ),
-              ),
+              creatCard("Email: ", _email),
+              creatCard("Phone no: ", _phone),
+              creatCard("Address: ", _address),
             ],
           ),
         ],
       ),
     );
   }
+}
+
+Widget creatCard(String _value, String _data) {
+  return Card(
+    color: Colors.green[600],
+    shape: StadiumBorder(
+      side: BorderSide(
+        color: Colors.red[600],
+        width: 2.0,
+      ),
+    ),
+    margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+    elevation: 10.0,
+    child: Container(
+      width: 500,
+      height: 80,
+      child: Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+          ),
+          Text(
+            _value,
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.red[800],
+            ),
+          ),
+          Text(
+            _data,
+            style: TextStyle(
+              fontSize: 22.0,
+              color: Colors.red[800],
+            ),
+          ),
+          // Padding(
+          //   padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+          // ),
+          IconButton(
+            icon: Icon(Icons.edit),
+            tooltip: 'Edit email',
+            onPressed: () {
+              print("Edit gar aaba!");
+            },
+          ),
+        ],
+      ),
+    ),
+  );
 }
