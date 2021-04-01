@@ -75,7 +75,11 @@ class _LoginPageState extends State<LoginPage> {
                       Text(
                         error,
                         style: TextStyle(color: Colors.red, fontSize: 14.0),
-                      )
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      // googleSignIn(),
                     ],
                   ),
                 ),
@@ -157,4 +161,8 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  // Widget googleSignIn() {
+  //   return CircularButton
+  // }
 }
