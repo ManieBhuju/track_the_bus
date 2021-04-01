@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:track_the_bus/models/user.dart';
+import 'package:track_the_bus/models/customuser.dart';
 import 'package:track_the_bus/screens/authenticate/authenticate.dart';
 import 'package:track_the_bus/screens/home/home.dart';
 // import 'package:track_the_bus/screens/home/mapload.dart';
@@ -8,7 +8,7 @@ import 'package:track_the_bus/screens/home/home.dart';
 class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<User>(context);
+    final user = Provider.of<CustomUser>(context);
 
     //returns either home or auth
     if (user == null) {
