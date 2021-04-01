@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:track_the_bus/services/auth.dart';
 
-class LoginPage extends StatefulWidget{
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage>{
-
+class _LoginPageState extends State<LoginPage> {
   //text field state
   String _email = '';
   String _password = '';
@@ -16,8 +18,8 @@ class _LoginPageState extends State<LoginPage>{
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
-  @override 
-  Widget build(BuildContext context){
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[850],
       body: Form(
@@ -32,7 +34,7 @@ class _LoginPageState extends State<LoginPage>{
               Text(
                 'Track The Bus!',
                 style: TextStyle(
-                  color:Colors.grey,
+                  color: Colors.grey,
                   letterSpacing: 2.0,
                   fontFamily: 'Lobster',
                   fontWeight: FontWeight.bold,
@@ -46,11 +48,11 @@ class _LoginPageState extends State<LoginPage>{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                    'Please Login!',
-                    style: TextStyle(
-                      color:Colors.grey,
-                      letterSpacing: 2.0,
-                      fontSize: 20.0,
+                      'Please Login!',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        letterSpacing: 2.0,
+                        fontSize: 20.0,
                       ),
                     ),
                   ],
@@ -65,11 +67,11 @@ class _LoginPageState extends State<LoginPage>{
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       buildEmailTF('Email'),
-                      SizedBox(height:20.0),
+                      SizedBox(height: 20.0),
                       buildPasswordTF('Password'),
-                      SizedBox(height:20.0),
+                      SizedBox(height: 20.0),
                       buildButtonContainer(),
-                      SizedBox(height:20.0),
+                      SizedBox(height: 20.0),
                       Text(
                         error,
                         style: TextStyle(color: Colors.red, fontSize: 14.0),
@@ -85,11 +87,11 @@ class _LoginPageState extends State<LoginPage>{
     );
   }
 
-  Widget buildEmailTF(String hintText){
+  Widget buildEmailTF(String hintText) {
     return TextFormField(
       validator: (val) => val.isEmpty ? 'Enter an Email' : null,
-      onChanged: (val){
-        setState(() => _email= val);
+      onChanged: (val) {
+        setState(() => _email = val);
       },
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
@@ -101,14 +103,14 @@ class _LoginPageState extends State<LoginPage>{
           color: Colors.greenAccent,
         ),
       ),
-        autofocus: true,
+      autofocus: true,
     );
   }
-  
-  Widget buildPasswordTF(String hintText){
+
+  Widget buildPasswordTF(String hintText) {
     return TextFormField(
       validator: (val) => val.length < 6 ? 'Enter character more than 6' : null,
-      onChanged: (val){
+      onChanged: (val) {
         setState(() => _password = val);
       },
       obscureText: true,
@@ -121,20 +123,21 @@ class _LoginPageState extends State<LoginPage>{
           color: Colors.greenAccent,
         ),
       ),
-        autofocus: true,
+      autofocus: true,
     );
   }
 
-  Widget buildButtonContainer(){
+  Widget buildButtonContainer() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical :25.0),
+      padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
         onPressed: () async {
           if (_formKey.currentState.validate()) {
-            print ('valid');
-            dynamic result = await _auth.signInWithEmailAndPassword(_email, _password);
+            print('valid');
+            dynamic result =
+                await _auth.signInWithEmailAndPassword(_email, _password);
             if (result == null) {
               setState(() => error = 'Please supply valid email and password!');
             }
@@ -154,5 +157,4 @@ class _LoginPageState extends State<LoginPage>{
       ),
     );
   }
-  
 }

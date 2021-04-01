@@ -110,7 +110,7 @@ Widget creatCard(String _value, String _data) {
           Text(
             _data,
             style: TextStyle(
-              fontSize: 22.0,
+              fontSize: 20.0,
               color: Colors.red[800],
             ),
           ),
@@ -119,7 +119,7 @@ Widget creatCard(String _value, String _data) {
           // ),
           IconButton(
             icon: Icon(Icons.edit),
-            tooltip: 'Edit email',
+            tooltip: 'Edit ' + _value,
             onPressed: () {
               print("Edit gar aaba!");
             },

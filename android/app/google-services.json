@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "557423958550",
-    "project_id": "track-the-bus-demo",
-    "storage_bucket": "track-the-bus-demo.appspot.com"
+    "project_number": "18098648476",
+    "project_id": "track-the-bus-demo-5ca7c",
+    "storage_bucket": "track-the-bus-demo-5ca7c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:557423958550:android:75345710ed12b36a99f337",
+        "mobilesdk_app_id": "1:18098648476:android:20b64c465a24a679898459",
         "android_client_info": {
           "package_name": "com.nec.trackthebus"
         }
       },
       "oauth_client": [
         {
-          "client_id": "557423958550-38bc7bgr0k6462865iau9usnt15jl25s.apps.googleusercontent.com",
+          "client_id": "18098648476-905bg8l7am8c0do3gv48m77r4fe7kumv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nec.trackthebus",
+            "certificate_hash": "b07362b5af30708f6b44fbdf8e4c2c3d842a0271"
+          }
+        },
+        {
+          "client_id": "18098648476-n5jk3snplfe8jhe27phch4h2hi6737o9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBjHim9ziGd32M3dG1vxmGAQr9HCeJ4Vug"
+          "current_key": "AIzaSyDssIMQr7gSibWN1Wq9MF-aw7GUIZj9Sn4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "557423958550-38bc7bgr0k6462865iau9usnt15jl25s.apps.googleusercontent.com",
+              "client_id": "18098648476-n5jk3snplfe8jhe27phch4h2hi6737o9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
